@@ -1,112 +1,632 @@
 [
-  {
-    "hiragana": "あ",
-    "katakana": "ア",
-    "pronunciation": "a"
-  },
-  {
-    "hiragana": "い",
-    "katakana": "イ",
-    "pronunciation": "i"
-  },
-  {
-    "hiragana": "う",
-    "katakana": "ウ",
-    "pronunciation": "u"
-  },
-  {
-    "hiragana": "え",
-    "katakana": "エ",
-    "pronunciation": "e"
-  },
-  {
-    "hiragana": "お",
-    "katakana": "オ",
-    "pronunciation": "o"
-  },
-  {
-    "hiragana": "か",
-    "katakana": "カ",
-    "pronunciation": "ka"
-  },
-  {
-    "hiragana": "き",
-    "katakana": "キ",
-    "pronunciation": "ki"
-  },
-  {
-    "hiragana": "く",
-    "katakana": "ク",
-    "pronunciation": "ku"
-  },
-  {
-    "hiragana": "け",
-    "katakana": "ケ",
-    "pronunciation": "ke"
-  },
-  {
-    "hiragana": "こ",
-    "katakana": "コ",
-    "pronunciation": "ko"
-  },
-  {
-    "hiragana": "さ",
-    "katakana": "サ",
-    "pronunciation": "sa"
-  },
-  {
-    "hiragana": "し",
-    "katakana": "シ",
-    "pronunciation": "shi"
-  },
-  {
-    "hiragana": "す",
-    "katakana": "ス",
-    "pronunciation": "su"
-  },
-  {
-    "hiragana": "せ",
-    "katakana": "セ",
-    "pronunciation": "se"
-  },
-  {
-    "hiragana": "そ",
-    "katakana": "ソ",
-    "pronunciation": "so"
-  },
-  {
-    "hiragana": "た",
-    "katakana": "タ",
-    "pronunciation": "ta"
-  },
-  {
-    "hiragana": "ち",
-    "katakana": "チ",
-    "pronunciation": "chi"
-  },
-  {
-    "hiragana": "つ",
-    "katakana": "ツ",
-    "pronunciation": "tsu"
-  },
-  {
-    "hiragana": "て",
-    "katakana": "テ",
-    "pronunciation": "te"
-  },
-  {
-    "hiragana": "と",
-    "katakana": "ト",
-    "pronunciation": "to"
-  },
-  {
-    "hiragana": "な",
-    "katakana": "ナ",
-    "pronunciation": "na"
-  },
-  {
-    "hiragana": "に",
-    "katakana": "ニ",
-    "pronunciation": "ni"
-  }
+	{
+		"hiragana": "あ",
+		"romaji": "a",
+		"type": "gojuuon",
+		"katakana": "ア"
+	},
+	{
+		"hiragana": "い",
+		"romaji": "i",
+		"type": "gojuuon",
+		"katakana": "イ"
+	},
+	{
+		"hiragana": "う",
+		"romaji": "u",
+		"type": "gojuuon",
+		"katakana": "ウ"
+	},
+	{
+		"hiragana": "え",
+		"romaji": "e",
+		"type": "gojuuon",
+		"katakana": "エ"
+	},
+	{
+		"hiragana": "お",
+		"romaji": "o",
+		"type": "gojuuon",
+		"katakana": "オ"
+	},
+	{
+		"hiragana": "か",
+		"romaji": "ka",
+		"type": "gojuuon",
+		"katakana": "カ"
+	},
+	{
+		"hiragana": "き",
+		"romaji": "ki",
+		"type": "gojuuon",
+		"katakana": "キ"
+	},
+	{
+		"hiragana": "く",
+		"romaji": "ku",
+		"type": "gojuuon",
+		"katakana": "ク"
+	},
+	{
+		"hiragana": "け",
+		"romaji": "ke",
+		"type": "gojuuon",
+		"katakana": "ケ"
+	},
+	{
+		"hiragana": "こ",
+		"romaji": "ko",
+		"type": "gojuuon",
+		"katakana": "コ"
+	},
+	{
+		"hiragana": "さ",
+		"romaji": "sa",
+		"type": "gojuuon",
+		"katakana": "サ"
+	},
+	{
+		"hiragana": "し",
+		"romaji": "shi",
+		"type": "gojuuon",
+		"katakana": "シ"
+	},
+	{
+		"hiragana": "す",
+		"romaji": "su",
+		"type": "gojuuon",
+		"katakana": "ス"
+	},
+	{
+		"hiragana": "せ",
+		"romaji": "se",
+		"type": "gojuuon",
+		"katakana": "セ"
+	},
+	{
+		"hiragana": "そ",
+		"romaji": "so",
+		"type": "gojuuon",
+		"katakana": "ソ"
+	},
+	{
+		"hiragana": "た",
+		"romaji": "ta",
+		"type": "gojuuon",
+		"katakana": "タ"
+	},
+	{
+		"hiragana": "ち",
+		"romaji": "chi",
+		"type": "gojuuon",
+		"katakana": "チ"
+	},
+	{
+		"hiragana": "つ",
+		"romaji": "tsu",
+		"type": "gojuuon",
+		"katakana": "ツ"
+	},
+	{
+		"hiragana": "て",
+		"romaji": "te",
+		"type": "gojuuon",
+		"katakana": "テ"
+	},
+	{
+		"hiragana": "と",
+		"romaji": "to",
+		"type": "gojuuon",
+		"katakana": "ト"
+	},
+	{
+		"hiragana": "な",
+		"romaji": "na",
+		"type": "gojuuon",
+		"katakana": "ナ"
+	},
+	{
+		"hiragana": "に",
+		"romaji": "ni",
+		"type": "gojuuon",
+		"katakana": "ニ"
+	},
+	{
+		"hiragana": "ぬ",
+		"romaji": "nu",
+		"type": "gojuuon",
+		"katakana": "ヌ"
+	},
+	{
+		"hiragana": "ね",
+		"romaji": "ne",
+		"type": "gojuuon",
+		"katakana": "ネ"
+	},
+	{
+		"hiragana": "の",
+		"romaji": "no",
+		"type": "gojuuon",
+		"katakana": "ノ"
+	},
+	{
+		"hiragana": "は",
+		"romaji": "ha",
+		"type": "gojuuon",
+		"katakana": "ハ"
+	},
+	{
+		"hiragana": "ひ",
+		"romaji": "hi",
+		"type": "gojuuon",
+		"katakana": "ヒ"
+	},
+	{
+		"hiragana": "ふ",
+		"romaji": "hu",
+		"type": "gojuuon",
+		"katakana": "ホゥ"
+	},
+	{
+		"hiragana": "へ",
+		"romaji": "he",
+		"type": "gojuuon",
+		"katakana": "ヘ"
+	},
+	{
+		"hiragana": "ほ",
+		"romaji": "ho",
+		"type": "gojuuon",
+		"katakana": "ホ"
+	},
+	{
+		"hiragana": "ま",
+		"romaji": "ma",
+		"type": "gojuuon",
+		"katakana": "マ"
+	},
+	{
+		"hiragana": "み",
+		"romaji": "mi",
+		"type": "gojuuon",
+		"katakana": "ミ"
+	},
+	{
+		"hiragana": "む",
+		"romaji": "mu",
+		"type": "gojuuon",
+		"katakana": "ム"
+	},
+	{
+		"hiragana": "め",
+		"romaji": "me",
+		"type": "gojuuon",
+		"katakana": "メ"
+	},
+	{
+		"hiragana": "も",
+		"romaji": "mo",
+		"type": "gojuuon",
+		"katakana": "モ"
+	},
+	{
+		"hiragana": "や",
+		"romaji": "ya",
+		"type": "gojuuon",
+		"katakana": "ヤ"
+	},
+	{
+		"hiragana": "ゆ",
+		"romaji": "yu",
+		"type": "gojuuon",
+		"katakana": "ユ"
+	},
+	{
+		"hiragana": "よ",
+		"romaji": "yo",
+		"type": "gojuuon",
+		"katakana": "ヨ"
+	},
+	{
+		"hiragana": "ら",
+		"romaji": "ra",
+		"type": "gojuuon",
+		"katakana": "ラ"
+	},
+	{
+		"hiragana": "り",
+		"romaji": "ri",
+		"type": "gojuuon",
+		"katakana": "リ"
+	},
+	{
+		"hiragana": "る",
+		"romaji": "ru",
+		"type": "gojuuon",
+		"katakana": "ル"
+	},
+	{
+		"hiragana": "れ",
+		"romaji": "re",
+		"type": "gojuuon",
+		"katakana": "レ"
+	},
+	{
+		"hiragana": "ろ",
+		"romaji": "ro",
+		"type": "gojuuon",
+		"katakana": "ロ"
+	},
+	{
+		"hiragana": "わ",
+		"romaji": "wa",
+		"type": "gojuuon",
+		"katakana": "ワ"
+	},
+	{
+		"hiragana": "を",
+		"romaji": "wo",
+		"type": "gojuuon",
+		"katakana": "ヲ"
+	},
+	{
+		"hiragana": "ん",
+		"romaji": "n",
+		"type": "gojuuon",
+		"katakana": "ン"
+	},
+	{
+		"hiragana": "が",
+		"romaji": "ga",
+		"type": "dakuon",
+		"katakana": "ガ"
+	},
+	{
+		"hiragana": "ぎ",
+		"romaji": "gi",
+		"type": "dakuon",
+		"katakana": "ギ"
+	},
+	{
+		"hiragana": "ぐ",
+		"romaji": "gu",
+		"type": "dakuon",
+		"katakana": "グ"
+	},
+	{
+		"hiragana": "げ",
+		"romaji": "ge",
+		"type": "dakuon",
+		"katakana": "ゲ"
+	},
+	{
+		"hiragana": "ご",
+		"romaji": "go",
+		"type": "dakuon",
+		"katakana": "ゴ"
+	},
+	{
+		"hiragana": "ざ",
+		"romaji": "za",
+		"type": "dakuon",
+		"katakana": "ザ"
+	},
+	{
+		"hiragana": "じ",
+		"romaji": "ji",
+		"type": "dakuon",
+		"katakana": "ジ"
+	},
+	{
+		"hiragana": "ず",
+		"romaji": "zu",
+		"type": "dakuon",
+		"katakana": "ズ"
+	},
+	{
+		"hiragana": "ぜ",
+		"romaji": "ze",
+		"type": "dakuon",
+		"katakana": "ゼ"
+	},
+	{
+		"hiragana": "ぞ",
+		"romaji": "zo",
+		"type": "dakuon",
+		"katakana": "ゾ"
+	},
+	{
+		"hiragana": "だ",
+		"romaji": "da",
+		"type": "dakuon",
+		"katakana": "ダ"
+	},
+	{
+		"hiragana": "ぢ",
+		"romaji": "ji",
+		"type": "dakuon",
+		"katakana": "ジ"
+	},
+	{
+		"hiragana": "づ",
+		"romaji": "zu",
+		"type": "dakuon",
+		"katakana": "ズ"
+	},
+	{
+		"hiragana": "で",
+		"romaji": "de",
+		"type": "dakuon",
+		"katakana": "デ"
+	},
+	{
+		"hiragana": "ど",
+		"romaji": "do",
+		"type": "dakuon",
+		"katakana": "ド"
+	},
+	{
+		"hiragana": "ば",
+		"romaji": "ba",
+		"type": "dakuon",
+		"katakana": "バ"
+	},
+	{
+		"hiragana": "び",
+		"romaji": "bi",
+		"type": "dakuon",
+		"katakana": "ビ"
+	},
+	{
+		"hiragana": "ぶ",
+		"romaji": "bu",
+		"type": "dakuon",
+		"katakana": "ブ"
+	},
+	{
+		"hiragana": "べ",
+		"romaji": "be",
+		"type": "dakuon",
+		"katakana": "ベ"
+	},
+	{
+		"hiragana": "ぼ",
+		"romaji": "bo",
+		"type": "dakuon",
+		"katakana": "ボ"
+	},
+	{
+		"hiragana": "ぱ",
+		"romaji": "pa",
+		"type": "handakuon",
+		"katakana": "パ"
+	},
+	{
+		"hiragana": "ぴ",
+		"romaji": "pi",
+		"type": "handakuon",
+		"katakana": "ピ"
+	},
+	{
+		"hiragana": "ぷ",
+		"romaji": "pu",
+		"type": "handakuon",
+		"katakana": "プ"
+	},
+	{
+		"hiragana": "ぺ",
+		"romaji": "pe",
+		"type": "handakuon",
+		"katakana": "ペ"
+	},
+	{
+		"hiragana": "ぽ",
+		"romaji": "po",
+		"type": "handakuon",
+		"katakana": "ポ"
+	},
+	{
+		"hiragana": "っ",
+		"romaji": "(pause)",
+		"type": "sokuon",
+		"katakana": "(パウセ)"
+	},
+	{
+		"hiragana": "きゃ",
+		"romaji": "kya",
+		"type": "youon",
+		"katakana": "キャ"
+	},
+	{
+		"hiragana": "きゅ",
+		"romaji": "kyu",
+		"type": "youon",
+		"katakana": "キュ"
+	},
+	{
+		"hiragana": "きょ",
+		"romaji": "kyo",
+		"type": "youon",
+		"katakana": "キョ"
+	},
+	{
+		"hiragana": "しゃ",
+		"romaji": "sha",
+		"type": "youon",
+		"katakana": "シャ"
+	},
+	{
+		"hiragana": "しゅ",
+		"romaji": "shu",
+		"type": "youon",
+		"katakana": "シュ"
+	},
+	{
+		"hiragana": "しょ",
+		"romaji": "sho",
+		"type": "youon",
+		"katakana": "ショ"
+	},
+	{
+		"hiragana": "ちゃ",
+		"romaji": "cha",
+		"type": "youon",
+		"katakana": "チャ"
+	},
+	{
+		"hiragana": "ちゅ",
+		"romaji": "chu",
+		"type": "youon",
+		"katakana": "チュ"
+	},
+	{
+		"hiragana": "ちょ",
+		"romaji": "cho",
+		"type": "youon",
+		"katakana": "チョ"
+	},
+	{
+		"hiragana": "にゃ",
+		"romaji": "nya",
+		"type": "youon",
+		"katakana": "ニャ"
+	},
+	{
+		"hiragana": "にゅ",
+		"romaji": "nyu",
+		"type": "youon",
+		"katakana": "ニュ"
+	},
+	{
+		"hiragana": "にょ",
+		"romaji": "nyo",
+		"type": "youon",
+		"katakana": "ニョ"
+	},
+	{
+		"hiragana": "ひゃ",
+		"romaji": "hya",
+		"type": "youon",
+		"katakana": "ヒャ"
+	},
+	{
+		"hiragana": "ひゅ",
+		"romaji": "hyu",
+		"type": "youon",
+		"katakana": "ヒュ"
+	},
+	{
+		"hiragana": "ひょ",
+		"romaji": "hyo",
+		"type": "youon",
+		"katakana": "ヒョ"
+	},
+	{
+		"hiragana": "みゃ",
+		"romaji": "mya",
+		"type": "youon",
+		"katakana": "ミャ"
+	},
+	{
+		"hiragana": "みゅ",
+		"romaji": "myu",
+		"type": "youon",
+		"katakana": "ミュ"
+	},
+	{
+		"hiragana": "みょ",
+		"romaji": "myo",
+		"type": "youon",
+		"katakana": "ミョ"
+	},
+	{
+		"hiragana": "りゃ",
+		"romaji": "rya",
+		"type": "youon",
+		"katakana": "リャ"
+	},
+	{
+		"hiragana": "りゅ",
+		"romaji": "ryu",
+		"type": "youon",
+		"katakana": "リュ"
+	},
+	{
+		"hiragana": "りょ",
+		"romaji": "ryo",
+		"type": "youon",
+		"katakana": "リョ"
+	},
+	{
+		"hiragana": "ぎゃ",
+		"romaji": "gya",
+		"type": "youon",
+		"katakana": "ギャ"
+	},
+	{
+		"hiragana": "ぎゅ",
+		"romaji": "gyu",
+		"type": "youon",
+		"katakana": "ギュ"
+	},
+	{
+		"hiragana": "ぎょ",
+		"romaji": "gyo",
+		"type": "youon",
+		"katakana": "ギョ"
+	},
+	{
+		"hiragana": "じゃ",
+		"romaji": "ja",
+		"type": "youon",
+		"katakana": "ジャ"
+	},
+	{
+		"hiragana": "じゅ",
+		"romaji": "ju",
+		"type": "youon",
+		"katakana": "ジュ"
+	},
+	{
+		"hiragana": "じょ",
+		"romaji": "jo",
+		"type": "youon",
+		"katakana": "ジョ"
+	},
+	{
+		"hiragana": "びゃ",
+		"romaji": "bya",
+		"type": "youon",
+		"katakana": "ビャ"
+	},
+	{
+		"hiragana": "びゅ",
+		"romaji": "byu",
+		"type": "youon",
+		"katakana": "ビュ"
+	},
+	{
+		"hiragana": "びょ",
+		"romaji": "byo",
+		"type": "youon",
+		"katakana": "ビョ"
+	},
+	{
+		"hiragana": "ぴゃ",
+		"romaji": "pya",
+		"type": "youon",
+		"katakana": "ピャ"
+	},
+	{
+		"hiragana": "ぴゅ",
+		"romaji": "pyu",
+		"type": "youon",
+		"katakana": "ピュ"
+	},
+	{
+		"hiragana": "ぴょ",
+		"romaji": "pyo",
+		"type": "youon",
+		"katakana": "ピョ"
+	}
 ]
