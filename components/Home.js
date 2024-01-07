@@ -3,6 +3,7 @@ import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import MainLayout from '../layouts/MainLayout';
 import alphabetData from '../data/alphabets.json';
 import { useAlphabetContext } from '../hooks/useAlphabetContext';
@@ -10,29 +11,13 @@ import { useAlphabetContext } from '../hooks/useAlphabetContext';
 const theme = createTheme();
 
 const useStyles = makeStyles((theme) => ({
-  inputContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: theme.spacing(2),
-  },
   input: {
-    marginRight: theme.spacing(2),
-    height: '38px', // Adjust the height as needed
-  },
-  submitButton: {
-    marginLeft: theme.spacing(1), // Add a 5px margin to the left
+    height: '38px',
   },
   randomContent: {
     fontSize: '48px',
     fontWeight: 'bold',
-  },
-  buttonContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: theme.spacing(2),
-  },
-  hintButton: {
-    marginLeft: theme.spacing(2), // Add some spacing between the buttons
+    whiteSpace: 'nowrap'
   },
   hintLabel: {
     fontSize: '16px',
@@ -40,6 +25,19 @@ const useStyles = makeStyles((theme) => ({
   },
   warningLabel: {
     color: 'red',
+  },
+  buttonContainer: {
+    marginTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(2, 0),
+    },
+  },
+  button: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      margin: theme.spacing(1, 0),
+    },
   },
 }));
 
@@ -100,8 +98,9 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <MainLayout>
-        <div className={classes.inputContainer}>
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
           <TextField
             id="message-input"
             label="Message"
@@ -110,45 +109,60 @@ const Home = () => {
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             className={classes.input}
+            fullWidth
           />
-          <Button variant="contained" color="primary" onClick={handleSubmitClick} className={classes.submitButton}>
+        </Grid>
+        <Grid item xs={12} className={classes.buttonContainer}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSubmitClick}
+            className={classes.button}
+          >
             Submit
           </Button>
-        </div>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleNextClick}
+            className={classes.button}
+          >
+            Next
+          </Button>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleHintClick}
+            className={classes.button}
+          >
+            Hint
+          </Button>
+        </Grid>
         {randomAlphabet && (
-          <>
+          <Grid item xs={12}>
             <RandomAlphabet content={randomAlphabet[selectedAlphabetType]} />
-            <div className={classes.buttonContainer}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNextClick}
-              >
-                Next
-              </Button>
-              <Button
-                variant="outlined"
-                color="primary"
-                className={classes.hintButton}
-                onClick={handleHintClick}
-              >
-                Hint
-              </Button>
-            </div>
             {showHint && (
               <Typography variant="body2" className={classes.hintLabel}>
                 Hint: {randomAlphabet.romaji}
               </Typography>
             )}
-          </>
+          </Grid>
         )}
-
-        {isCorrect ? (
-          <p>Congratulations!</p>
-        ) : isCorrect === false ? (
-          <p className={classes.warningLabel}>Wrong guess. Please enter again.</p>
-        ) : null}
-      </MainLayout>
+        {isCorrect && (
+          <Grid item xs={12}>
+            <Typography variant="body2" className={classes.warningLabel}>
+              Congratulations!
+            </Typography>
+          </Grid>
+        )}
+        {isCorrect === false && (
+          <Grid item xs={12}>
+            <Typography variant="body2" className={classes.warningLabel}>
+              Wrong guess. Please enter again.
+            </Typography>
+          </Grid>
+        )}
+      </Grid>
     </ThemeProvider>
   );
 };
