@@ -150,7 +150,7 @@ const Home = () => {
         )}
         {isCorrect && (
           <Grid item xs={12}>
-            <Typography variant="body2" className={classes.warningLabel}>
+            <Typography variant="body2">
               Congratulations!
             </Typography>
           </Grid>
