@@ -98,7 +98,6 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={theme}>
-
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
@@ -158,7 +157,7 @@ const Home = () => {
         {isCorrect === false && (
           <Grid item xs={12}>
             <Typography variant="body2" className={classes.warningLabel}>
-              Wrong guess. Please enter again.
+              Wrong guess. Please try again.
             </Typography>
           </Grid>
         )}
