@@ -2,10 +2,10 @@ import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { useAlphabetContext } from '../hooks/useAlphabetContext';
+import { useAlphabetContext} from '../hooks/useAlphabetContext';
 import { AlphabetType } from '../constants/AlphabetType';
 
-const Menu = () => {
+const NavigationMenu = () => {
   const { selectedAlphabetType, updateSelectedAlphabetType } = useAlphabetContext();
 
   const handleMenuChange = (value) => {
@@ -31,4 +31,4 @@ const Menu = () => {
   return <List>{listItems}</List>;
 };
 
-export default Menu;
+export default NavigationMenu;

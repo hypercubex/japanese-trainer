@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Menu from '../Menu';
-import { useAlphabetContext } from '../../hooks/useAlphabetContext';
+import NavigationMenu from '../NavigationMenu';
+import { useAlphabetContext} from '../../hooks/useAlphabetContext';
 
 jest.mock('../../hooks/useAlphabetContext');
 
@@ -20,7 +20,7 @@ describe('Menu', () => {
   });
 
   it('renders menu items with correct selection', () => {
-    render(<Menu />);
+    render(<NavigationMenu />);
 
     const hiraganaItem = screen.getByText('Hiragana');
     const katakanaItem = screen.getByText('Katakana');
@@ -30,7 +30,7 @@ describe('Menu', () => {
   });
 
   it('calls updateSelectedAlphabetType with correct value when menu item is clicked', () => {
-    render(<Menu />);
+    render(<NavigationMenu />);
 
     const katakanaItem = screen.getByText('Katakana');
 

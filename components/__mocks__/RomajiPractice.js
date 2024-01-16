@@ -1,0 +1,1 @@
+export default () => <div data-testid="romaji-practice-component" />
