@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import { useAlphabetContext, AlphabetType } from '../hooks/useAlphabetContext';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -55,34 +51,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, menu }) => {
   const classes = useStyles();
-  const { selectedAlphabetType, updateSelectedAlphabetType } = useAlphabetContext();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const handleMenuChange = (value) => {
-    updateSelectedAlphabetType(value);
-  };
+  const menuButtonRef = useRef(null);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
-
-  const alphabetTypes = [
-    { type: AlphabetType.HIRAGANA, label: 'Hiragana' },
-    { type: AlphabetType.KATAKANA, label: 'Katakana' },
-  ];
-
-  const listItems = alphabetTypes.map((item) => (
-    <ListItem
-      button
-      key={item.type}
-      onClick={() => handleMenuChange(item.type)}
-      selected={selectedAlphabetType === item.type}
-    >
-      <ListItemText primary={item.label} />
-    </ListItem>
-  ));
 
   return (
     <div className={classes.root}>
@@ -97,6 +73,7 @@ const MainLayout = ({ children }) => {
             onClick={toggleDrawer}
             edge="start"
             className={`${classes.menuButton} ${isDrawerOpen ? classes.hide : ''}`}
+            ref={menuButtonRef}
           >
             <MenuIcon />
           </IconButton>
@@ -125,7 +102,7 @@ const MainLayout = ({ children }) => {
           </IconButton>
         </Toolbar>
         <div className={classes.drawerContainer}>
-          <List>{listItems}</List>
+          {menu}
         </div>
       </Drawer>
       <main className={classes.content}>

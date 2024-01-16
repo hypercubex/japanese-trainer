@@ -1,10 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-
-// Define the enum for alphabet types
-export const AlphabetType = {
-  HIRAGANA: 'hiragana',
-  KATAKANA: 'katakana',
-};
+import { AlphabetType } from '../constants/AlphabetType';
 
 const AlphabetContext = createContext();
 
@@ -23,7 +18,6 @@ export const AlphabetProvider = ({ children }) => {
 
   const updateSelectedAlphabetType = (alphabetType) => {
     setSelectedAlphabetType(alphabetType);
-    console.log({alphabetType})
   };
 
   const value = {
