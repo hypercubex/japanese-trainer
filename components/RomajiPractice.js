@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import MainLayout from '../layouts/MainLayout';
 import alphabetData from '../data/alphabets.json';
-import { useAlphabetContext} from '../hooks/useAlphabetContext';
+import { usePracticeContext} from '../hooks/usePracticeContext';
 
 const theme = createTheme();
 
@@ -48,7 +48,7 @@ const RandomAlphabet = ({ content: alphabet }) => {
 
 const Home = () => {
   const classes = useStyles();
-  const { selectedAlphabetType } = useAlphabetContext();
+  const { selectedAlphabetType } = usePracticeContext();
   const [randomAlphabet, setRandomAlphabet] = useState({});
   const [inputValue, setInputValue] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);

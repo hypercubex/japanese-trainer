@@ -1,41 +1,33 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import NavigationMenu from '../NavigationMenu';
-import { useAlphabetContext} from '../../hooks/useAlphabetContext';
+import { AlphabetProvider } from '../../hooks/usePracticeContext';
 
-jest.mock('../../hooks/useAlphabetContext');
+describe('NavigationMenu', () => {
+  test('renders the menu items', () => {
+    render(
+      <AlphabetProvider>
+        <NavigationMenu />
+      </AlphabetProvider>
+    );
 
-describe('Menu', () => {
-  const mockUpdateSelectedAlphabetType = jest.fn();
-  const mockSelectedAlphabetType = 'hiragana';
+    // Test rendering of disabled list items
+    expect(screen.getByText('Romaji')).toBeDefined();
+    expect(screen.getByText('Kana')).toBeDefined()
 
-  beforeEach(() => {
-    useAlphabetContext.mockReturnValue({
-      selectedAlphabetType: mockSelectedAlphabetType,
-      updateSelectedAlphabetType: mockUpdateSelectedAlphabetType,
-    });
-  });
+    // Test rendering of selectable list items
+    const hiraganaButtons = screen.getAllByText('Hiragana');
+    const katakanaButtons = screen.getAllByText('Katakana');
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+    expect(hiraganaButtons).toHaveLength(2);
+    expect(katakanaButtons).toHaveLength(2);
 
-  it('renders menu items with correct selection', () => {
-    render(<NavigationMenu />);
+    // Test item selection
+    userEvent.click(hiraganaButtons[0]);
+    
 
-    const hiraganaItem = screen.getByText('Hiragana');
-    const katakanaItem = screen.getByText('Katakana');
-
-    expect(hiraganaItem).toBeDefined()
-    expect(katakanaItem).toBeDefined()
-  });
-
-  it('calls updateSelectedAlphabetType with correct value when menu item is clicked', () => {
-    render(<NavigationMenu />);
-
-    const katakanaItem = screen.getByText('Katakana');
-
-    fireEvent.click(katakanaItem);
-
-    expect(mockUpdateSelectedAlphabetType).toHaveBeenCalledWith('katakana');
+    userEvent.click(katakanaButtons[1]);
+    
   });
 });

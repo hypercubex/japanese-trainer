@@ -1,6 +1,6 @@
 import { NoSsr } from '@material-ui/core';
 
-import { AlphabetProvider } from '../hooks/useAlphabetContext';
+import { AlphabetProvider } from '../hooks/usePracticeContext';
 import MainLayout from '../layouts/MainLayout';
 import Home from '../components/RomajiPractice';
 import NavigationMenu from '../components/NavigationMenu';

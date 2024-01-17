@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import { AlphabetProvider } from '../../hooks/useAlphabetContext';
+import { AlphabetProvider } from '../../hooks/usePracticeContext';
 import Home from '../RomajiPractice'; // Update the import path for the Home component
 
 describe('RomajiPractice', () => {

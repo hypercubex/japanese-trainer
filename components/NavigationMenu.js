@@ -2,11 +2,12 @@ import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { useAlphabetContext} from '../hooks/useAlphabetContext';
+import { usePracticeContext } from '../hooks/usePracticeContext';
 import { AlphabetType } from '../constants/AlphabetType';
+import { PracticeType } from '../constants/PracticeType';
 
 const NavigationMenu = () => {
-  const { selectedAlphabetType, updateSelectedAlphabetType } = useAlphabetContext();
+  const { selectedAlphabetType, selectedPracticeType, updateSelectedAlphabetType } = usePracticeContext();
 
   const handleMenuChange = (value) => {
     updateSelectedAlphabetType(value);
@@ -17,16 +18,35 @@ const NavigationMenu = () => {
     { type: AlphabetType.KATAKANA, label: 'Katakana' },
   ];
 
-  const listItems = alphabetTypes.map((item) => (
-    <ListItem
-      button
-      key={item.type}
-      onClick={() => handleMenuChange(item.type)}
-      selected={selectedAlphabetType === item.type}
-    >
-      <ListItemText primary={item.label} />
-    </ListItem>
-  ));
+  const practiceTypes = [
+    { type: PracticeType.ROMAJI, label: 'Romaji' },
+    { type: PracticeType.KANA, label: 'Kana' },
+  ];
+
+  const listItems = practiceTypes.map((practiceType) => [
+    <ListItem key={practiceType.label}>
+      <ListItemText
+        primary={practiceType.label}
+        primaryTypographyProps={{
+          style: {
+            fontWeight: 'bold',
+            fontSize: 'larger',
+          },
+        }}
+      />
+    </ListItem>,
+    alphabetTypes.map((item) => (
+      <ListItem
+        button
+        key={`${practiceType}-${item.type}`}
+        onClick={() => handleMenuChange({ practiceType, alphabetType: item.type })}
+        data-practicetype={practiceType}
+        data-alphabettype={item.type}
+      >
+        <ListItemText primary={item.label} />
+      </ListItem>
+    )),
+  ]);
 
   return <List>{listItems}</List>;
 };

@@ -1,15 +1,16 @@
 import { renderHook, act } from '@testing-library/react';
-import { useAlphabetContext, AlphabetProvider } from '../useAlphabetContext';
+import { usePracticeContext, AlphabetProvider } from '../usePracticeContext';
 import { AlphabetType } from '../../constants/AlphabetType';
+import { PracticeType } from '../../constants/PracticeType';
 
 jest.mock('../../components/Home');
 
-describe('useAlphabetContext', () => {
+describe('usePracticeContext', () => {
     it('throws an error when used outside of AlphabetProvider', () => {
         let error;
         renderHook(() => {
             try {
-                useAlphabetContext();
+                usePracticeContext();
             } catch (err) {
                 error = err;
             }
@@ -18,15 +19,13 @@ describe('useAlphabetContext', () => {
         });
 
         expect(error).toEqual(
-            Error('useAlphabetContext must be used within an AlphabetProvider')
+            Error('usePracticeContext must be used within an AlphabetProvider')
         );
     });
 
     it('returns the context value within AlphabetProvider', () => {
-        const { result } = renderHook(() => useAlphabetContext(), {
-            wrapper: ({ children }) => (
-                <AlphabetProvider>{children}</AlphabetProvider>
-            ),
+        const { result } = renderHook(() => usePracticeContext(), {
+            wrapper: AlphabetProvider,
         });
 
         expect(result.current.selectedAlphabetType).toBe(AlphabetType.HIRAGANA);
@@ -35,16 +34,20 @@ describe('useAlphabetContext', () => {
     });
 
     it('updates the selectedAlphabetType when updateSelectedAlphabetType is called', () => {
-        const { result } = renderHook(() => useAlphabetContext(), {
-            wrapper: ({ children }) => (
-                <AlphabetProvider>{children}</AlphabetProvider>
-            ),
+        const { result } = renderHook(() => usePracticeContext(), {
+            wrapper: AlphabetProvider,
         });
+        const alphabetType = AlphabetType.KATAKANA
+        const practiceType = PracticeType.KANA
 
         act(() => {
-            result.current.updateSelectedAlphabetType(AlphabetType.KATAKANA);
+            result.current.updateSelectedAlphabetType({
+                alphabetType,
+                practiceType
+            });
         });
 
-        expect(result.current.selectedAlphabetType).toBe(AlphabetType.KATAKANA);
+        expect(result.current.selectedAlphabetType).toBe(alphabetType);
+        expect(result.current.selectedPracticeType).toBe(practiceType);
     });
 });
