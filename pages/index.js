@@ -2,7 +2,7 @@ import { NoSsr } from '@material-ui/core';
 
 import { AlphabetProvider } from '../hooks/usePracticeContext';
 import MainLayout from '../layouts/MainLayout';
-import Home from '../components/RomajiPractice';
+import Home from '../components/Home';
 import NavigationMenu from '../components/NavigationMenu';
 
 const IndexPage = () => (
